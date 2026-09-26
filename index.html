@@ -14,111 +14,111 @@
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
 tailwind.config = {
-theme: {
-extend: {
-fontFamily: {
-sans: ['Mitr', 'sans-serif'],
-},
-colors: {
-cream: '#FFF5F9',
-pinky: {
-light: '#FFE6F2',
-DEFAULT: '#FFC9E5',
-dark: '#E67BB3',
-heart: '#FFADD6',
-},
-purpley: {
-light: '#FFF0F7',
-DEFAULT: '#FFC9E5',
-dark: '#D86B9E',
-},
-brown: {
-light: '#C274B3',
-DEFAULT: '#A05990',
-dark: '#803F72'
-}
-}
-},
-boxShadow: {
-'soft': '0 4px 20px 2px rgba(160, 89, 144, 0.25)',
-'card': '0 10px 25px 5px rgba(160, 89, 144, 0.2)',
-'polaroid': '0 4px 10px rgba(160, 89, 144, 0.15)',
-}
-}
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Mitr', 'sans-serif'],
+      },
+      colors: {
+        cream: '#FFF5F9',
+        pinky: {
+          light: '#FFE6F2',
+          DEFAULT: '#FFC9E5',
+          dark: '#E67BB3',
+          heart: '#FFADD6',
+        },
+        purpley: {
+          light: '#FFF0F7',
+          DEFAULT: '#FFC9E5',
+          dark: '#D86B9E',
+        },
+        brown: {
+          light: '#C274B3',
+          DEFAULT: '#A05990',
+          dark: '#803F72'
+        }
+      }
+    },
+    boxShadow: {
+      'soft': '0 4px 20px 2px rgba(160, 89, 144, 0.25)',
+      'card': '0 10px 25px 5px rgba(160, 89, 144, 0.2)',
+      'polaroid': '0 4px 10px rgba(160, 89, 144, 0.15)',
+    }
+  }
 }
 </script>
 <style>
 body {
-background-color: #FFF5F9;
-color: #A05990;
+  background-color: #FFF5F9;
+  color: #A05990;
 }
 ::-webkit-scrollbar {
-width: 8px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-background: #FFF5F9;
+  background: #FFF5F9;
 }
 ::-webkit-scrollbar-thumb {
-background: #A05990;
-border-radius: 10px;
+  background: #A05990;
+  border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-background: #803F72;
+  background: #803F72;
 }
 .modal {
-transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 .modal-content {
-transition: transform 0.3s ease;
-transform: translateY(20px) scale(0.95);
+  transition: transform 0.3s ease;
+  transform: translateY(20px) scale(0.95);
 }
 .modal.active .modal-content {
-transform: translateY(0) scale(1);
+  transform: translateY(0) scale(1);
 }
 @keyframes float {
-0%, 100% { transform: translateY(0px) rotate(0deg); }
-50% { transform: translateY(-15px) rotate(5deg); }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
 }
 @keyframes float-reverse {
-0%, 100% { transform: translateY(0px) rotate(0deg); }
-50% { transform: translateY(15px) rotate(-8deg); }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(15px) rotate(-8deg); }
 }
 @keyframes float-slow {
-0%, 100% { transform: translateY(0px) scale(1); }
-50% { transform: translateY(-8px) scale(1.05); }
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-8px) scale(1.05); }
 }
 .animate-float { animation: float 4s ease-in-out infinite; }
 .animate-float-delayed { animation: float 4s ease-in-out 2s infinite; }
 .animate-float-reverse { animation: float-reverse 5s ease-in-out 1s infinite; }
 .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
 @keyframes clef-bounce {
-0%, 100% { transform: scale(1) rotate(0deg); }
-50% { transform: scale(1.12) rotate(10deg); }
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.12) rotate(10deg); }
 }
 .animate-clef-playing {
-animation: clef-bounce 0.8s ease-in-out infinite;
+  animation: clef-bounce 0.8s ease-in-out infinite;
 }
 @keyframes note-float {
-0% {
-opacity: 1;
-transform: translateY(0) scale(0.6) rotate(0deg);
-}
-50% {
-opacity: 0.8;
-transform: translateY(-25px) translateX(10px) scale(1.1) rotate(15deg);
-}
-100% {
-opacity: 0;
-transform: translateY(-50px) translateX(-10px) scale(0.8) rotate(-15deg);
-}
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(0.6) rotate(0deg);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-25px) translateX(10px) scale(1.1) rotate(15deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px) translateX(-10px) scale(0.8) rotate(-15deg);
+  }
 }
 .music-note {
-position: absolute;
-pointer-events: none;
-color: #A05990;
-font-size: 14px;
-font-weight: bold;
-animation: note-float 2s ease-out infinite;
+  position: absolute;
+  pointer-events: none;
+  color: #A05990;
+  font-size: 14px;
+  font-weight: bold;
+  animation: note-float 2s ease-out infinite;
 }
 </style>
 </head>
@@ -138,7 +138,7 @@ animation: note-float 2s ease-out infinite;
 <div id="notesContainer" class="absolute inset-0 pointer-events-none"></div>
 </button>
 </div>
-<!-- Custom Theme SVGs -->
+<!-- Custom Theme SVGS -->
 <svg width="0" height="0" class="hidden absolute pointer-events-none">
 <symbol id="icon-teddy" viewBox="0 0 24 24" fill="currentColor">
 <circle cx="6" cy="7" r="3.5"/>
@@ -209,7 +209,7 @@ Open 10:00 am - Close 22:00 p.m
 </header>
 <!-- Main Content -->
 <main class="px-6 py-8 space-y-12 relative z-10">
-<!-- Intro & Badges -->
+<!-- Intro -->
 <section class="text-center space-y-3 relative">
 <h2 class="text-xl font-medium flex items-center justify-center gap-2 text-brown">
 <i data-lucide="sparkles" class="w-5 h-5 text-brown"></i>
@@ -220,13 +220,6 @@ Open 10:00 am - Close 22:00 p.m
 ไม่จํากัดข้อมูลการใส่ อยากได้อะไรสั่งมาได้เลย<br>
 ทางเราออกแบบการจัดวางให้ค่า
 </p>
-<!-- Badges -->
-<div class="flex flex-wrap justify-center gap-2 mt-3">
-<!-- คงองค์ประกอบ badges ไว้ครับ -->
-<span class="text-xs bg-white border border-pinky/60 text-brown px-3 py-1 rounded-full shadow-sm hover:scale-105 transition-transform cursor-pointer font-medium">รับทำลายน้ำ</span>
-<span class="text-xs bg-white border border-pinky/60 text-brown px-3 py-1 rounded-full shadow-sm hover:scale-105 transition-transform cursor-pointer font-medium">รับทำป้าย</span>
-<span class="text-xs bg-white border border-pinky/60 text-brown px-3 py-1 rounded-full shadow-sm hover:scale-105 transition-transform cursor-pointer font-medium">รับดึงเข้ากลุ่ม</span>
-</div>
 </section>
 <!-- Portfolio Section -->
 <section class="bg-gradient-to-b from-pinky-light/70 to-purpley-light/70 rounded-3xl p-6 relative shadow-card border border-white">
@@ -281,13 +274,7 @@ Open 10:00 am - Close 22:00 p.m
 </button>
 </div>
 </section>
-<!-- รูปแบรนเนอร์ (ซ่อนการแสดงผลตามเงื่อนไข) -->
-<section class="w-full hidden">
-<div class="rounded-3xl overflow-hidden border-2 border-white shadow-card bg-white">
-<img src="ไม่มีชื่อ 80_20260925012941.png" alt="Banner" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/2400x800/FFE6F2/A05990?text=Banner+2400x800';">
-</div>
-</section>
-<!-- ปุ่มเช็คคิวงานข้างล่างแบรนเนอร์ (คงโครงสร้างและปุ่มเส้นประไว้ครบถ้วน) -->
+<!-- ปุ่มเช็คคิวงาน -->
 <section class="space-y-3">
 <div class="hidden bg-white border-2 border-pinky-light rounded-2xl p-4 shadow-sm items-center justify-between">
 <div class="flex items-center gap-2">
@@ -304,96 +291,6 @@ Open 10:00 am - Close 22:00 p.m
 <span>เช็คคิวงานตรงนี้</span>
 </a>
 </section>
-<!-- Pricing Web Design (ซ่อนส่วนเรทราคาเริ่มต้นออกตามเงื่อนไข โดยคง element ไว้) -->
-<section class="relative hidden">
-<h2 class="text-xl font-medium mb-4 flex items-center gap-2 border-b-2 border-pinky-light pb-2 text-brown">
-<i data-lucide="receipt" class="w-5 h-5 text-brown"></i>
-ราคาทําป้ายเริ่มต้น
-</h2>
-<div class="bg-white rounded-3xl shadow-card p-6 space-y-4 border-2 border-pinky-light relative">
-<svg class="absolute top-4 right-4 w-8 h-8 -rotate-12 drop-shadow-sm" viewBox="0 0 100 100"><use href="#icon-button"></use></svg>
-<svg class="absolute top-1/2 -left-3 w-8 h-8 bg-white rounded-full drop-shadow-sm p-1" viewBox="0 0 24 24"><use href="#icon-heart-cute"></use></svg>
-<div class="flex items-end justify-between border-b border-dashed border-pinky/60 pb-3 relative z-10">
-<div>
-<span class="block font-medium text-xl text-brown">Start</span>
-<span class="text-[11px] text-brown-light">ลายน้ำน่ารักๆ ไว้ใส่ในตัวอย่างสินค้าเท่านั้น</span>
-</div>
-<span class="text-2xl font-medium text-brown">39.-</span>
-</div>
-<p class="font-medium text-xs text-brown pt-1 relative z-10">เรทราคาต่างๆ</p>
-<ul class="space-y-2.5 text-xs relative z-10">
-<li class="flex justify-between items-center bg-cream p-2.5 rounded-lg"><span class="text-brown">ป้ายแนวน่ารัก</span> <span class="font-medium text-brown">เริ่มต้น 59.-</span></li>
-<li class="flex justify-between items-center bg-cream p-2.5 rounded-lg"><span class="text-brown">ป้ายแนวสว่าง</span> <span class="font-medium text-brown">เริ่มต้น 89.-</span></li>
-<li class="flex justify-between items-center bg-cream p-2.5 rounded-lg"><span class="text-brown">ป้ายแนวมืด</span> <span class="font-medium text-brown">เริ่มต้น 89.-</span></li>
-<li class="flex justify-between items-center bg-cream p-2.5 rounded-lg"><span class="text-brown">ป้ายเรทราคา</span> <span class="font-medium text-brown">เริ่มต้น 99.-</span></li>
-</ul>
-<div class="bg-pinky-light/40 rounded-xl p-3 text-xs border border-pinky-light relative z-10 flex items-center justify-between">
-<div class="flex items-center gap-1">
-<i data-lucide="plus-circle" class="w-4 h-4 text-brown"></i>
-<span class="text-brown-light font-medium">Add on มีราคาเหมา 3 ป้ายขึ้นไป</span>
-</div>
-<span class="bg-pinky text-white font-bold px-2 py-0.5 rounded-md text-[10px] shadow-sm">พิเศษ</span>
-</div>
-<div class="text-[11px] text-brown-light space-y-1.5 pt-2 relative z-10">
-<p class="flex items-start gap-1"><i data-lucide="check" class="w-3.5 h-3.5 mt-0.5 text-brown shrink-0"></i> <span>แก้ไขข้อมูลหลังส่งตรวจสอบ ฟรี 1 ครั้ง</span></p>
-<div class="flex items-start gap-1">
-<i data-lucide="info" class="w-3.5 h-3.5 mt-0.5 text-brown shrink-0"></i>
-<div>
-<p class="font-medium text-brown">หลังส่งงาน แล้วแก้ไขเพิ่มเติม:</p>
-<ul class="list-disc list-inside text-[10.5px] text-brown-light ml-1 space-y-0.5">
-<li>ข้อความแก้จุดละ 10.-</li>
-<li>เปลี่ยนฟอนต์หัวป้าย 39.-</li>
-<li>เปลี่ยนรูปเท่ากับราคาป้าย</li>
-</ul>
-</div>
-</div>
-</div>
-<p class="text-[10px] text-brown-light italic pt-1 relative z-10 border-t border-pinky-light/60">
-หมายเหตุ: ราคาขึ้นอยู่กับความละเอียดของข้อมูลและปริมาณเนื้อหา ทางร้านขอสงวนสิทธิ์ในการประเมินราคาตามความเหมาะสมนะคะ
-</p>
-</div>
-</section>
-<!-- Rules & Process -->
-<section class="space-y-2">
-<div class="grid grid-cols-2 gap-3.5">
-<!-- กรอบซ้าย: ขั้นตอน -->
-<div class="bg-white rounded-2xl p-4 shadow-sm border-2 border-pinky-light relative overflow-hidden flex flex-col justify-between">
-<svg class="absolute -right-3 -bottom-3 w-10 h-10 opacity-30 pointer-events-none" viewBox="0 0 100 100"><use href="#icon-button"></use></svg>
-<div>
-<h3 class="font-medium mb-3 flex items-center gap-1.5 text-sm text-brown relative z-10">
-<i data-lucide="clipboard-list" class="w-4 h-4 text-brown shrink-0"></i> ขั้นตอน
-</h3>
-<ul class="text-[11px] text-brown-light space-y-2 list-disc list-inside relative z-10 leading-snug">
-<li>รองานปกติ 4-8 ชม.</li>
-<li>งานเร่ง *2 ของราคา</li>
-<li>แจ้งบรีฟงานให้ครบถ้วน</li>
-<li>รีเช็คงานใน 30 นาที</li>
-<li>แก้ไขฟรีถ้าทำผิดบรีฟ</li>
-</ul>
-</div>
-</div>
-<!-- กรอบขวา: กฎของร้าน -->
-<div class="bg-white rounded-2xl p-4 shadow-sm border-2 border-pinky-light relative overflow-hidden flex flex-col justify-between">
-<svg class="absolute -right-2 -bottom-2 w-8 h-8 opacity-80 pointer-events-none" viewBox="0 0 24 24"><use href="#icon-heart-cute"></use></svg>
-<div>
-<h3 class="font-medium mb-3 flex items-center gap-1.5 text-sm text-brown relative z-10">
-<i data-lucide="shield-alert" class="w-4 h-4 text-brown shrink-0"></i> กฎของร้าน
-</h3>
-<ul class="text-[11px] text-brown-light space-y-2 list-disc list-inside relative z-10 leading-snug">
-<li>โอนแล้วไม่คืนเงินทุกกรณี</li>
-<li>ยกเลิกหลังตรวจ ไม่คืนเงิน</li>
-<li>ไม่รับทําดามแบบร้านอื่น</li>
-<li>งดตัดป้ายร้านอื่นมา</li>
-<li>งดจิก/เร่งงานทุกกรณี</li>
-</ul>
-</div>
-</div>
-</div>
-<!-- หมายเหตุลิขสิทธิ์ -->
-<p class="text-[9.5px] text-brown-light text-center leading-relaxed px-2 italic pt-1">
-หมายเหตุ: งดน่าป้ายไปขาย แจก ดัดแปลง หรือเจน หรือเข้าระบบ Ai เพราะงานทุกชิ้นมีลิขสิทธิ์ หากตรวจพบการละเมิด ทางร้านขอดำเนินคดีตามกฎหมาย
-</p>
-</section>
 <!-- ปุ่มช่องทางการโอนเงิน -->
 <section>
 <button onclick="openPaymentModal()" class="w-full bg-white hover:bg-pinky-light/50 border-2 border-brown/70 text-brown py-3.5 px-5 rounded-2xl font-medium text-sm shadow-card flex items-center justify-between transition-all hover:scale-[1.02]">
@@ -406,34 +303,19 @@ Open 10:00 am - Close 22:00 p.m
 <i data-lucide="chevron-right" class="w-5 h-5 text-brown"></i>
 </button>
 </section>
-<!-- Work parts (คง element โพลารอยด์ทั้ง 3 ไว้ แต่ใช้ CSS ซ่อนช่องหมาและหมูให้เหลือช่องน้องแมวช่องเดียว) -->
+<!-- Work parts -->
 <section class="bg-white rounded-3xl p-5 border-2 border-solid border-pinky/60 shadow-sm text-center">
 <h3 class="font-medium text-brown text-sm flex items-center justify-center gap-1.5">
 <i data-lucide="sparkles" class="w-4 h-4 text-brown"></i> Work parts
 </h3>
 <p class="text-[10px] text-brown-light font-medium italic mt-0.5 mb-4">เลือกชิ้นส่วนประกอบงานตรงนี้</p>
-<!-- ปรับ CSS grid ให้แสดงผลตรงกลางช่องเดียวโดยคง HTML โครงสร้างเดิมไว้ครบ 100% -->
-<div class="grid grid-cols-1 max-w-[120px] mx-auto gap-3">
-<!-- 1. โพลารอยด์: หมา (ซ่อนด้วย CSS) -->
-<a href="https://drive.google.com/drive/folders/10wVjpHKCr8rMZ-UoCd5G_ALC13AUC1QK" target="_blank" class="hidden bg-white hover:bg-pinky-light/30 border border-brown/20 rounded-2xl p-2.5 shadow-polaroid flex-col items-center justify-center text-center transition-all hover:scale-105 active:scale-95 group">
-<div class="w-full aspect-square bg-cream rounded-xl border-2 border-dashed border-pinky-light flex items-center justify-center mb-2 p-2">
-<i data-lucide="dog" class="w-8 h-8 text-brown group-hover:text-brown-dark transition-colors stroke-[1.75]"></i>
-</div>
-<span class="text-[10px] font-medium text-brown group-hover:text-brown-dark transition-colors leading-tight">Block</span>
-</a>
-<!-- 2. โพลารอยด์: แมว (แสดงผลปกติ) -->
-<a href="https://drive.google.com/drive/folders/1T36yZKLHN5huKfwu1NYW_PVLLsswHTID" target="_blank" class="bg-white hover:bg-pinky-light/30 border border-brown/20 rounded-2xl p-2.5 shadow-polaroid flex flex-col items-center justify-center text-center transition-all hover:scale-105 active:scale-95 group">
+<div class="flex justify-center">
+<!-- โพลารอยด์ แมว -->
+<a href="https://drive.google.com/drive/folders/1T36yZKLHN5huKfwu1NYW_PVLLsswHTID" target="_blank" class="w-1/3 bg-white hover:bg-pinky-light/30 border border-brown/20 rounded-2xl p-2.5 shadow-polaroid flex flex-col items-center justify-center text-center transition-all hover:scale-105 active:scale-95 group">
 <div class="w-full aspect-square bg-cream rounded-xl border-2 border-dashed border-pinky-light flex items-center justify-center mb-2 p-2">
 <i data-lucide="cat" class="w-8 h-8 text-brown group-hover:text-brown-dark transition-colors stroke-[1.75]"></i>
 </div>
 <span class="text-[10px] font-medium text-brown group-hover:text-brown-dark transition-colors leading-tight">Toon</span>
-</a>
-<!-- 3. โพลารอยด์: หมู (ซ่อนด้วย CSS) -->
-<a href="https://drive.google.com/drive/folders/1YLsW06GXE_ENus4ad8AUNU4FEM74Z2vl" target="_blank" class="hidden bg-white hover:bg-pinky-light/30 border border-brown/20 rounded-2xl p-2.5 shadow-polaroid flex-col items-center justify-center text-center transition-all hover:scale-105 active:scale-95 group">
-<div class="w-full aspect-square bg-cream rounded-xl border-2 border-dashed border-pinky-light flex items-center justify-center mb-2 p-2">
-<i data-lucide="piggy-bank" class="w-8 h-8 text-brown group-hover:text-brown-dark transition-colors stroke-[1.75]"></i>
-</div>
-<span class="text-[10px] font-medium text-brown group-hover:text-brown-dark transition-colors leading-tight">Desco</span>
 </a>
 </div>
 </section>
@@ -551,130 +433,138 @@ LINE
 <script>
 lucide.createIcons();
 const portfolioData = {
-fonts: {
-title: "รายการฟอนด์",
-icon: "type",
-colorClass: "bg-pinky-light text-brown",
-headerClass: "bg-pinky-light",
-links: [
-{ name: "1. POTATO HOUSE", url: "https://drive.google.com/drive/folders/1bVNE63CDUJO57iwsgdLH006T276PbdtY" },
-{ name: "2. BLY HOUSE", url: "https://drive.google.com/drive/folders/1uj7bV9UpOADSHJgnfWrPKhSqPsH1NiqG" },
-{ name: "3. IHO FONT", url: "https://drive.google.com/drive/folders/1d3w-fVgEAwjU8eUaTxW52RLQREZ0czVU" },
-{ name: "4. PKD HOUSE", url: "https://drive.google.com/drive/folders/15AxmnEWkjsXdgOt30Sr1-Y5IFnDTnDyE" },
-{ name: "5. KLD HOUSE", url: "https://drive.google.com/drive/folders/1LoGGsSx_zVj1ZqpCShlysONojls6mFPo" }
-]
-}
+  fonts: {
+    title: "รายการฟอนด์",
+    icon: "type",
+    colorClass: "bg-pinky-light text-brown",
+    headerClass: "bg-pinky-light",
+    links: [
+      { name: "1. POTATO HOUSE", url: "https://drive.google.com/drive/folders/1bVNE63CDUJO57iwsgdLH006T276PbdtY" },
+      { name: "2. BLY HOUSE", url: "https://drive.google.com/drive/folders/1uj7bV9UpOADSHJgnfWrPKhSqPsH1NiqG" },
+      { name: "3. IHO FONT", url: "https://drive.google.com/drive/folders/1d3w-fVgEAwjU8eUaTxW52RLQREZ0czVU" },
+      { name: "4. PKD HOUSE", url: "https://drive.google.com/drive/folders/15AxmnEWkjsXdgOt30Sr1-Y5IFnDTnDyE" },
+      { name: "5. KLD HOUSE", url: "https://drive.google.com/drive/folders/1LoGGsSx_zVj1ZqpCShlysONojls6mFPo" }
+    ]
+  }
 };
 const portfolioModal = document.getElementById('portfolioModal');
 const paymentModal = document.getElementById('paymentModal');
 const modalTitle = document.getElementById('modalTitle');
 const modalLinksContainer = document.getElementById('modalLinks');
 const modalHeaderBg = document.getElementById('modalHeaderBg');
+
 function openModal(category) {
-const data = portfolioData[category];
-if (!data) return;
-modalTitle.innerHTML = `<i data-lucide="${data.icon}" class="w-5 h-5 shrink-0"></i><span>${data.title}</span>`;
-modalHeaderBg.className = `p-5 flex justify-between items-center ${data.headerClass} relative`;
-modalLinksContainer.innerHTML = '';
-data.links.forEach(link => {
-const a = document.createElement('a');
-a.href = link.url;
-a.target = "_blank";
-a.className = "flex items-center justify-between p-4 bg-white rounded-2xl shadow-sm border-2 border-transparent hover:border-pinky-light hover:shadow-md transition-all group";
-a.innerHTML = `
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 shrink-0 rounded-full flex items-center justify-center ${data.colorClass}">
-<i data-lucide="link" class="w-4 h-4"></i>
-</div>
-<span class="font-medium text-brown group-hover:text-brown-dark transition-colors line-clamp-1">${link.name}</span>
-</div>
-<i data-lucide="external-link" class="w-4 h-4 text-brown opacity-50 shrink-0 group-hover:opacity-100 group-hover:scale-110 transition-all"></i>
-`;
-modalLinksContainer.appendChild(a);
-});
-lucide.createIcons();
-portfolioModal.classList.remove('invisible', 'opacity-0');
-portfolioModal.classList.add('active');
-document.body.style.overflow = 'hidden';
+  const data = portfolioData[category];
+  if (!data) return;
+  modalTitle.innerHTML = `<i data-lucide="${data.icon}" class="w-5 h-5 shrink-0"></i><span>${data.title}</span>`;
+  modalHeaderBg.className = `p-5 flex justify-between items-center ${data.headerClass} relative`;
+  modalLinksContainer.innerHTML = '';
+  data.links.forEach(link => {
+    const a = document.createElement('a');
+    a.href = link.url;
+    a.target = "_blank";
+    a.className = "flex items-center justify-between p-4 bg-white rounded-2xl shadow-sm border-2 border-transparent hover:border-pinky-light hover:shadow-md transition-all group";
+    a.innerHTML = `
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 shrink-0 rounded-full flex items-center justify-center ${data.colorClass}">
+          <i data-lucide="link" class="w-4 h-4"></i>
+        </div>
+        <span class="font-medium text-brown group-hover:text-brown-dark transition-colors line-clamp-1">${link.name}</span>
+      </div>
+      <i data-lucide="external-link" class="w-4 h-4 text-brown opacity-50 shrink-0 group-hover:opacity-100 group-hover:scale-110 transition-all"></i>
+    `;
+    modalLinksContainer.appendChild(a);
+  });
+  lucide.createIcons();
+  portfolioModal.classList.remove('invisible', 'opacity-0');
+  portfolioModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
+
 function openPaymentModal() {
-paymentModal.classList.remove('invisible', 'opacity-0');
-paymentModal.classList.add('active');
-document.body.style.overflow = 'hidden';
+  paymentModal.classList.remove('invisible', 'opacity-0');
+  paymentModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
+
 function closeModal(modalId) {
-const targetModal = document.getElementById(modalId);
-targetModal.classList.add('opacity-0');
-targetModal.classList.remove('active');
-setTimeout(() => {
-targetModal.classList.add('invisible');
-document.body.style.overflow = '';
-}, 300);
+  const targetModal = document.getElementById(modalId);
+  targetModal.classList.add('opacity-0');
+  targetModal.classList.remove('active');
+  setTimeout(() => {
+    targetModal.classList.add('invisible');
+    document.body.style.overflow = '';
+  }, 300);
 }
+
 [portfolioModal, paymentModal].forEach(m => {
-m.addEventListener('click', function(e) {
-if (e.target === m) closeModal(m.id);
+  m.addEventListener('click', function(e) {
+    if (e.target === m) closeModal(m.id);
+  });
 });
-});
+
 /* ระบบ YouTube Music Player Integration */
 let player;
 let isPlaying = false;
 let noteInterval = null;
+
 function onYouTubeIframeAPIReady() {
-player = new YT.Player('youtubePlayer', {
-height: '0',
-width: '0',
-videoId: 'xnwOfliZ-zQ',
-playerVars: {
-'autoplay': 1,
-'controls': 0,
-'loop': 1,
-'playlist': 'xnwOfliZ-zQ'
-},
-events: {
-'onReady': function(event) {
-event.target.playVideo();
-isPlaying = true;
-const cleficon = document.getElementById('cleficon');
-if (cleficon) cleficon.classList.add('animate-clef-playing');
-createFloatingNote();
-noteInterval = setInterval(createFloatingNote, 600);
+  player = new YT.Player('youtubePlayer', {
+    height: '0',
+    width: '0',
+    videoId: 'xnwOfliZ-zQ',
+    playerVars: {
+      'autoplay': 1,
+      'controls': 0,
+      'loop': 1,
+      'playlist': 'xnwOfliZ-zQ'
+    },
+    events: {
+      'onReady': function(event) {
+        event.target.playVideo();
+        isPlaying = true;
+        const cleficon = document.getElementById('cleficon');
+        if (cleficon) cleficon.classList.add('animate-clef-playing');
+        createFloatingNote();
+        noteInterval = setInterval(createFloatingNote, 600);
+      }
+    }
+  });
 }
-}
-});
-}
+
 function createFloatingNote() {
-const container = document.getElementById('notesContainer');
-if (!container) return;
-const note = document.createElement('span');
-const symbols = ['♫', '♪', '♬', '♩'];
-note.innerText = symbols[Math.floor(Math.random() * symbols.length)];
-note.className = 'music-note';
-const randomX = (Math.random() * 40 - 20) + 'px';
-note.style.left = `calc(50% + ${randomX})`;
-note.style.top = '0px';
-container.appendChild(note);
-setTimeout(() => {
-note.remove();
-}, 2000);
+  const container = document.getElementById('notesContainer');
+  if (!container) return;
+  const note = document.createElement('span');
+  const symbols = ['♪', '♫', '♬', '♩'];
+  note.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+  note.className = 'music-note';
+  const randomX = (Math.random() * 40 - 20) + 'px';
+  note.style.left = `calc(50% + ${randomX})`;
+  note.style.top = '0px';
+  container.appendChild(note);
+  setTimeout(() => {
+    note.remove();
+  }, 2000);
 }
+
 function toggleMusic() {
-const cleficon = document.getElementById('cleficon');
-if (isPlaying) {
-if (player && player.pauseVideo) {
-player.pauseVideo();
-}
-cleficon.classList.remove('animate-clef-playing');
-clearInterval(noteInterval);
-} else {
-if (player && player.playVideo) {
-player.playVideo();
-}
-cleficon.classList.add('animate-clef-playing');
-createFloatingNote();
-noteInterval = setInterval(createFloatingNote, 600);
-}
-isPlaying = !isPlaying;
+  const cleficon = document.getElementById('cleficon');
+  if (isPlaying) {
+    if (player && player.pauseVideo) {
+      player.pauseVideo();
+    }
+    cleficon.classList.remove('animate-clef-playing');
+    clearInterval(noteInterval);
+  } else {
+    if (player && player.playVideo) {
+      player.playVideo();
+    }
+    cleficon.classList.add('animate-clef-playing');
+    createFloatingNote();
+    noteInterval = setInterval(createFloatingNote, 600);
+  }
+  isPlaying = !isPlaying;
 }
 </script>
 </body>
